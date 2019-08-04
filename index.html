@@ -29,18 +29,21 @@
         <button><</button>
         <button>></button>
         <h2>FIRST</h2>
+        <ul></ul>
       </div>
 
       <div id='second'>
         <button><</button>
         <button>></button>
         <h2>SECOND</h2>
+        <ul></ul>
       </div>
 
       <div id='third'>
         <button><</button>
         <button>></button>
         <h2>THIRD</h2>
+        <ul></ul>
       </div>
     </div>
 
@@ -53,6 +56,22 @@
       { id: 3, name: 'curly', slot: 'third' },
       { id: 4, name: 'lucy', slot: 'third', selected: true },
     ];
+
+    const ul = document.querySelector('ul');
+
+     // generate html
+    const generateHTML = (users) => {
+      return users.map( user => `
+        <li>${ user.name }</li>
+      `).join('');
+    };
+
+    // render
+    const render = () => {
+      const html = generateHTML(users);
+      ul.innerHTML = html;
+    }
+    render();
     </script>
   </body>
 </html>
