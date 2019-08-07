@@ -88,14 +88,14 @@
     };
 
     // if clicked, add class 'selected'
-    document.addEventListener('click', (ev)=> {
-      if (ev.target.tagName === 'LI' && ev.target.className === 'selected') {
+    ul.addEventListener('click', (ev)=> {
+      if (ev.target.className === 'selected') {
         ev.target.className = '';
       }
-      else if (ev.target.tagName === 'LI') {
+      else {
         ev.target.className = 'selected';
       }
-    })
+    });
 
     // render
     const render = () => {
