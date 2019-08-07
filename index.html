@@ -87,13 +87,10 @@
       `).join('');
     };
 
-    // if clicked, add class 'selected'
+    // if clicked, toggle class 'selected'
     ul.addEventListener('click', (ev)=> {
-      if (ev.target.className === 'selected') {
-        ev.target.className = '';
-      }
-      else {
-        ev.target.className = 'selected';
+      if (ev.target.tagName === 'LI') {
+        ev.target.classList.toggle('selected');
       }
     });
 
