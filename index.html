@@ -25,6 +25,9 @@
         height: 3rem;
         background-color: tomato;
       }
+      button[disabled] {
+        background-color: white;
+      }
       ul {
         list-style: none;
       }
@@ -36,7 +39,7 @@
 
     <div id='lists'>
       <div id='first'>
-        <button><</button>
+        <button disabled><</button>
         <button>></button>
         <h2>FIRST</h2>
         <ul></ul>
@@ -51,7 +54,7 @@
 
       <div id='third'>
         <button><</button>
-        <button>></button>
+        <button disabled>></button>
         <h2>THIRD</h2>
         <ul></ul>
       </div>
