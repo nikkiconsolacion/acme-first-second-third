@@ -50,21 +50,21 @@
         <button disabled><</button>
         <button>></button>
         <h2>FIRST</h2>
-        <ul></ul>
+        <ul id='firstUl'></ul>
       </div>
 
       <div id='second'>
         <button><</button>
         <button>></button>
         <h2>SECOND</h2>
-        <ul></ul>
+        <ul id='secondUl'></ul>
       </div>
 
       <div id='third'>
         <button><</button>
         <button disabled>></button>
         <h2>THIRD</h2>
-        <ul></ul>
+        <ul id='thirdUl'></ul>
       </div>
     </div>
 
@@ -79,6 +79,9 @@
     ];
 
     const ul = document.querySelector('ul');
+    const firstUl = document.querySelector('#firstUl');
+    const secondUl = document.querySelector('#secondUl');
+    const thirdUl = document.querySelector('#thirdUl');
 
      // generate html
     const generateHTML = (users) => {
@@ -86,6 +89,7 @@
         <li>${ user.name }</li>
       `).join('');
     };
+
 
     // if clicked, toggle class 'selected'
     ul.addEventListener('click', (ev)=> {
@@ -97,6 +101,26 @@
     // render
     const render = () => {
       const html = generateHTML(users);
+
+    //   // generate which ul to place them in
+    // const generateUl = (users) => {
+    //   return users.map( user => {
+    //     const first = users.slot === 'first';
+    //     const second = users.slot === 'second';
+    //     const third = users.slot === 'third';
+
+    //     if (first) {
+    //       return firstUl.innerHTML = generateHTML(user);
+    //     }
+    //     if (second) {
+    //       return secondUl.innerHTML = generateHTML(user);
+    //     }
+    //     if (third) {
+    //       return secondUl.innerHTML = generateHTML(user);
+    //     }
+
+    //   })
+    // }
       ul.innerHTML = html;
     }
     render();
